@@ -67,7 +67,7 @@ An online discussion board platform requires a relational database to store user
     from user as u, clubPage as c, member as m
     where u.user_ID = m.user_ID and m.page_ID = c.page_ID;
 
-![Query1](https://github.com/joshuaji03/DBMS-Usecase-Study/blob/main/img/Picture3.jpg)
+![Query1](https://github.com/joshuaji03/DBMS-Usecase-Study/blob/main/img/Picture3.png)
 
   **Query 2**: Find the member's id, name, and level of the club "Reichert and Sons".
 
@@ -76,7 +76,7 @@ An online discussion board platform requires a relational database to store user
     where u.user_ID = m.user_ID and m.page_ID
     = (select page_ID from clubPage where pageName = "Reichert and Sons");
 
-![Query2](https://github.com/joshuaji03/DBMS-Usecase-Study/blob/main/img/Picture4.jpg)
+![Query2](https://github.com/joshuaji03/DBMS-Usecase-Study/blob/main/img/Picture4.png)
 
   **Query 3**: Find the name and city come from of a club administrator who has more than 3 followers.
 
@@ -85,7 +85,7 @@ An online discussion board platform requires a relational database to store user
     where u.user_ID = c.admin_ID and 3 < (select count(u.user_ID) from user as u, follow as f
     where u.user_ID = f.follow);
 
-![Query3](https://github.com/joshuaji03/DBMS-Usecase-Study/blob/main/img/Picture5.jpg)
+![Query3](https://github.com/joshuaji03/DBMS-Usecase-Study/blob/main/img/Picture5.png)
 
   **Query 4**: Find out the club that contains the post that title is "Aga Khan University"
   and return the number of members of the club.
@@ -94,7 +94,7 @@ An online discussion board platform requires a relational database to store user
     from clubPage as c, member as m, postPage as p
     where p.title ="Aga Khan University" and p.page_ID = m.page_ID and p.page_ID = c.page_ID group by c.page_ID;
 
-![Query4](https://github.com/joshuaji03/DBMS-Usecase-Study/blob/main/img/Picture6.jpg)
+![Query4](https://github.com/joshuaji03/DBMS-Usecase-Study/blob/main/img/Picture6.png)
 
   **Query 5**: Find out the user's followers and the user's name who reply "LoL" under the post "Assumption University of Thailand".
 
@@ -125,15 +125,15 @@ Then we connected onto our MongoDB server through command line tool: “mongosh�
         {$sort:{topUser:-1}}
         ]);
 
-![Query1](https://github.com/joshuaji03/DBMS-Usecase-Study/blob/main/img/Picture8.jpg)
+![Query1](https://github.com/joshuaji03/DBMS-Usecase-Study/blob/main/img/Picture8.png)
 
-![Query1-2](https://github.com/joshuaji03/DBMS-Usecase-Study/blob/main/img/Picture9.jpg)
+![Query1-2](https://github.com/joshuaji03/DBMS-Usecase-Study/blob/main/img/Picture9.png)
 
   **Query 2**: Find all users who live in California
 
     db.user.find({state:"California"});
 
-![Query2](https://github.com/joshuaji03/DBMS-Usecase-Study/blob/main/img/Picture10.jpg)
+![Query2](https://github.com/joshuaji03/DBMS-Usecase-Study/blob/main/img/Picture10.png)
 
 
 
@@ -141,10 +141,10 @@ Then we connected onto our MongoDB server through command line tool: “mongosh�
 
 The database can be accessed by R with the package “RMySQL” and the visualization of analyzed data is shown below.
 
-![Graph1](https://github.com/joshuaji03/DBMS-Usecase-Study/blob/main/img/Picture11.jpg)
+![Graph1](https://github.com/joshuaji03/DBMS-Usecase-Study/blob/main/img/Picture11.png)
 Graph 1: Number of followers the users have   
 
-![Graph2](https://github.com/joshuaji03/DBMS-Usecase-Study/blob/main/img/Picture12.jpg)
+![Graph2](https://github.com/joshuaji03/DBMS-Usecase-Study/blob/main/img/Picture12.png)
 Graph 2: Number of users from the states
 
 PyMongo:
